@@ -54,7 +54,7 @@ while True:
             print("Queue Name:", jsonResponse["name"])
             print("Issue Count:", jsonResponse["issueCount"])
 
-            # Wenn mindestens ein Vorgang in der Warteschlange ist, wird ein Alarm ausgeöst.
+            # Wenn mindestens ein Vorgang in der Warteschlange ist, wird ein Alarm ausgelöst.
             if jsonResponse["issueCount"] >= 1:
                 alarm()
 
