@@ -1,4 +1,3 @@
-import threading
 import requests
 import time
 from secrets import user, password
