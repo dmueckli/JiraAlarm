@@ -8,14 +8,11 @@ from requests.auth import HTTPBasicAuth
 from requests.models import HTTPError
 from threading import Thread
 
-
 # Variablen
 alarm = False
 tStart = time.time()
 
 # Funktionen
-
-
 def play():
     media = vlc.MediaPlayer('media/siren.wav')
     media.play()
@@ -30,8 +27,6 @@ def alarm():
     T.start()                                   # ...und starten
 
 # TODO: Die JSON Abfrage als Funktion auslagern
-
-
 def getJSON(base_url, api_endpoint, headers, params, user, password):
     response = requests.get('{0}{1}'.format(base_url, api_endpoint),
                             auth=HTTPBasicAuth(user, password), headers=headers, params=params)
@@ -65,8 +60,3 @@ while True:
             print(f'Other error occurred: {err}')
 
         tStart = time.time()
-
-    # Sobald ein Alarm erkannt wird
-    if alarm == True:
-
-        alarm = False
