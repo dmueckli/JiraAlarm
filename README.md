@@ -1,2 +1,2 @@
 # JiraAlarm
-Checks a Queue for events an fires an alarm.
+Checks a jira queue for events an fires an alarm.
