@@ -18,27 +18,27 @@ def play():
     media.play()
 
 
-def seconds_passed(tstmp):
-    return time.time() - tstmp >= 15
+def seconds_passed(tstmp, seconds):
+    return time.time() - tstmp >= seconds
 
 
 def alarm():
     T = Thread(name='Alarm', target=play)       # Thread erstellen...
     T.start()                                   # ...und starten
 
-# TODO: Die JSON Abfrage als Funktion auslagern
+# TODO: Die JSON Abfrage als Funktion auslagern # <<-- Ist...
 def getJSON(base_url, api_endpoint, headers, params, user, password):
     response = requests.get('{0}{1}'.format(base_url, api_endpoint),
                             auth=HTTPBasicAuth(user, password), headers=headers, params=params)
     response.raise_for_status()
     print('Return Code:', response.status_code)
     jsonResponse = response.json()
-    return response.json()                      # <<-- Ist das so richtig?!
+    return response.json()                      # ...das so richtig?! -->>
 
 
-# Alle 30 Sekunden wird die Queue abgefragt.
+# Alle X Sekunden wird die Queue abgefragt.
 while True:
-    if seconds_passed(tStart) == True:
+    if seconds_passed(tStart, seconds=15) == True:
         try:
 
             # JSON Decoding
