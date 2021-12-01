@@ -1,14 +1,13 @@
 import requests
 import time
-from secrets import user, password
+import vlc
 
-from requests import api
+from secrets import user, password
 from constants import *
 from requests.auth import HTTPBasicAuth
 from requests.models import HTTPError
-
 from threading import Thread
-import vlc
+
 
 # Variablen
 alarm = False
