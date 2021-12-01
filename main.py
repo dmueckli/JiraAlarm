@@ -23,7 +23,7 @@ def play():
 
 
 def seconds_passed(tstmp):
-    return time.time() - tstmp >= 30
+    return time.time() - tstmp >= 15
 
 
 def alarm():
